@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dronetech/drone/model/drone.dart';
+import 'package:dronetech/src/model/drone.dart';
 
 //viewmodel to serve as mediator between the view and firestore
 class DroneViewmodel {

@@ -1,5 +1,5 @@
-import 'package:dronetech/drone/model/drone.dart';
-import 'package:dronetech/drone/viewmodel/drone_vm.dart';
+import 'package:dronetech/src/model/drone.dart';
+import 'package:dronetech/src/viewmodel/drone_vm.dart';
 import 'package:flutter/material.dart';
 
 class AddDroneDialog extends StatefulWidget {

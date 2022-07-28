@@ -1,4 +1,4 @@
-import 'package:dronetech/drone/view/drones_page.dart';
+import 'package:dronetech/src/view/drones_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
