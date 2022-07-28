@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  //initialising Firebase Instance
   await Firebase.initializeApp();
   runApp(const MyApp());
 }
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Material App',
+      title: 'Drone Tech App',
       debugShowCheckedModeBanner: false,
       home: DronesPage()
     );

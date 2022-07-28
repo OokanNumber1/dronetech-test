@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dronetech/drone/model/drone.dart';
 
+//viewmodel to serve as mediator between the view and firestore
 class DroneViewmodel {
-  final firestore = FirebaseFirestore.instance;
   final droneCollection = FirebaseFirestore.instance.collection('drones');
 
   Stream<QuerySnapshot> droneStream() {
@@ -18,7 +18,7 @@ class DroneViewmodel {
           'dateAcquired': drone.dateAcquired,
           'isServiced': drone.isServiced,
         })
-        .then((value) => print('Drone Added'))
-        .catchError(() => print('Error Occured'));
+        .then((value) =>(){})
+        .catchError((err) =>throw Exception(err));
   }
 }

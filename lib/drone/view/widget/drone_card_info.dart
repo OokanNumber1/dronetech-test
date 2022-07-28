@@ -27,7 +27,11 @@ class DroneCardInfo extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('idTag: $idTag',style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+              Text(
+                'idTag: $idTag',
+                style:
+                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
               const SizedBox(height: 8),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 Text('Weight: $weight'),

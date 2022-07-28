@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dronetech/drone/model/drone.dart';
 import 'package:dronetech/drone/view/add_drone_dialog.dart';
 import 'package:dronetech/drone/view/widget/drone_card_info.dart';
 import 'package:dronetech/drone/viewmodel/drone_vm.dart';
@@ -22,6 +23,7 @@ class _DronesPageState extends State<DronesPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('DroneTECH Test'),
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
@@ -31,7 +33,7 @@ class _DronesPageState extends State<DronesPage> {
               if (snapshot.hasError) {
                 return const Center(
                   child: Text(
-                    'Error Occured',
+                    'Error Occured, Try Again.',
                     style: TextStyle(fontSize: 24),
                   ),
                 );
@@ -39,7 +41,9 @@ class _DronesPageState extends State<DronesPage> {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const Center(child: LinearProgressIndicator());
               }
+
               return ListView(
+                //mapping each document snapshot field from the collection to the CardInfo fields
                 children: snapshot.data!.docs.map((DocumentSnapshot document) {
                   Map<String, dynamic> data =
                       document.data()! as Map<String, dynamic>;
@@ -60,9 +64,9 @@ class _DronesPageState extends State<DronesPage> {
               context: context,
               builder: (context) {
                 return Align(
-                  alignment: Alignment.center,
+                  alignment: Alignment.topCenter,
                   child: SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.72,
+                    height: MediaQuery.of(context).size.height * 0.7,
                     width: MediaQuery.of(context).size.width * 0.88,
                     child: const AddDroneDialog(),
                   ),
@@ -74,5 +78,3 @@ class _DronesPageState extends State<DronesPage> {
     );
   }
 }
-
-
