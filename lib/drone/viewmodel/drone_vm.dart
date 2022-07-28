@@ -1,0 +1,24 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dronetech/drone/model/drone.dart';
+
+class DroneViewmodel {
+  final firestore = FirebaseFirestore.instance;
+  final droneCollection = FirebaseFirestore.instance.collection('drones');
+
+  Stream<QuerySnapshot> droneStream() {
+    return droneCollection.snapshots();
+  }
+
+  Future<void> addDrone(Drone drone) {
+    return droneCollection
+        .add({
+          'idTag': drone.idTag,
+          'weight': drone.weight,
+          'manufacturer': drone.manufacturer,
+          'dateAcquired': drone.dateAcquired,
+          'isServiced': drone.isServiced,
+        })
+        .then((value) => print('Drone Added'))
+        .catchError(() => print('Error Occured'));
+  }
+}
