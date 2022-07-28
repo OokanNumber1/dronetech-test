@@ -74,7 +74,6 @@ class _DronesPageState extends State<DronesPage> {
               });
         },
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
